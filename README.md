@@ -141,6 +141,7 @@ wordcraft-cli text report.docx                      # plain text
 wordcraft-cli inspect report.docx                   # structure as JSON
 wordcraft-cli run --template sample \
   --cmd 'select.text={"text":"Membership"}' --cmd format.bold --save out.docx
+wordcraft-cli run --script job.json                 # the same from a file: commands, then save to docx and pdf
 ```
 
 Web: `cd apps/wordcraft-web && trunk serve`, then open <http://127.0.0.1:8771/?sample>.
@@ -188,7 +189,7 @@ covers every target starting with it (`wordcraft*=debug`). The logger is
 | L0 | `wordcraft-geom` | units and measurements |
 | L1 | `wordcraft-doc`, `wordcraft-fonts`, `wordcraft-proof` | document model and editing; fonts and shaping; spelling, grammar, hyphenation |
 | L2 | `wordcraft-layout`, `wordcraft-docx`, `wordcraft-formats` | line breaking, pagination, tables, notes, hit testing; OOXML; ODT/RTF/HTML/Markdown/TXT |
-| L3 | `wordcraft-render`, `wordcraft-pdf` | rasteriser (vello_cpu); PDF (krilla) |
+| L3 | `wordcraft-render`, `wordcraft-pdf` | rasteriser (vello_cpu); PDF ([craft-pdf](docs/shared-pdf.md), Krilla) |
 | L4 | `wordcraft-engine` | session, undo, 422 commands, Word feature catalog |
 | L5 | `wordcraft-mcp` | MCP server |
 | L6 | `wordcraft-ui-egui` | the Word-style front end (swappable) |
