@@ -62,8 +62,8 @@ git clone https://github.com/en-wl/wordlist esdb
 git -C esdb checkout 1e5b7d3a72f47a71da5d28686c1dd4b397178485
 cd esdb
 python -X utf8 combine.py create-db scowl.db
-cd ../wordcraft
-cargo run -p wordcraft-proof --example build_en -- ../esdb <python-executable> assets/spelling/en-forms.txt
+cd ..
+cargo run -p wordcraft-proof --example build_en -- ./esdb <python-executable> assets/spelling/en-forms.txt
 ```
 
 Use an absolute Python executable path if it is not on PATH. UTF-8 mode is required on Windows.
